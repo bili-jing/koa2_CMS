@@ -52,8 +52,10 @@ var index = require('./admin/index');
 var articlecate = require('./admin/articlecate');
 var article = require('./admin/article');
 var focus = require('./admin/focus');
-var link = require('./admin/link')
-var nav = require('./admin/nav')
+var link = require('./admin/link');
+var nav = require('./admin/nav');
+var setting = require('./admin/setting');
+
 router.get('/', async (ctx) => {
     // ctx.body = '后台管理页面'
     await ctx.render('admin/index')
@@ -69,6 +71,7 @@ router.use('/article',article);
 router.use('/focus',focus);
 router.use('/link',link);
 router.use('/nav',nav);
+router.use('/setting',setting);
 router.use(index);
 
 

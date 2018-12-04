@@ -218,8 +218,8 @@
 
         
 
-        <li>
-            <a href="index.html">
+        <li {{if G.url[1]=="setting"}} class="active open" {{/if}}>
+            <a href="{{__HOST_}}/admin/setting">
                 <i class="icon-cog"></i>
                 <span class="menu-text"> 系统设置 </span>
             </a>

@@ -1,0 +1,13 @@
+.form-horizontal .form-group{
+    height: 44px;
+}
+
+.sort_input{
+    width: 40px;
+    text-align: center;
+}
+
+
+.pagination{
+    float: right;
+}

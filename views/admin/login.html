@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <title>后台管理系统登录</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- basic styles -->
+
+  <link href="{{__HOST__}}/admin/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="{{__HOST__}}/admin/css/font-awesome.min.css" />
+
+  <!-- fonts -->
+  <link rel="stylesheet" href="{{__HOST__}}/admin/css/ace.min.css" />
+  <link rel="stylesheet" href="{{__HOST__}}/admin/css/ace-rtl.min.css" />
+  <script src='{{__HOST__}}/admin/js/jquery-2.0.3.min.js'></script>
+
+  <style type="text/css">
+    .login-layout {
+      background: #428bca;
+    }
+
+    .login-layout .widget-box {
+      background-color: #428bca;
+    }
+
+    .login-layout .widget-box .widget-main {
+      padding: 26px 16px;
+    }
+
+    .login-container {
+      padding-top: 80px;
+    }
+
+    .header {
+      margin-top: 0px;
+      padding-bottom: 12px;
+    }
+
+    #code{
+        cursor: pointer;
+      }
+  </style>
+
+  <script>
+    $(function(){
+
+          $('#code').click(function(){
+            $(this).attr('src','{{__ROOT__}}/admin/login/code?t='+ Math.random() * 1000)
+          })
+          
+          //
+          $("#loginForm").submit(function(){
+          if($('#username').val().trim() =='' || $("#password").val().trim() =='' ||$(".code").val()==''){
+
+						alert('用户名或者密码或者验证码不能为空')
+						return false;
+					}
+					return true;
+
+				})
+      })
+      </script>
+
+
+
+</head>
+
+<body class="login-layout">
+  <div class="main-container">
+    <div class="main-content">
+      <div class="row">
+        <div class="col-sm-10 col-sm-offset-1">
+          <div class="login-container">
+
+            <div class="position-relative">
+              <div id="login-box" class="login-box visible widget-box no-border">
+                <div class="widget-body">
+                  <div class="widget-main">
+
+                    <h2 class="header blue lighter bigger center">
+                      CMS内容管理系统
+
+                    </h2>
+
+                    <div class="space-6"></div>
+
+                    <form action="{{__HOST__}}/admin/login/dologin" method="POST" id="loginForm">
+                      <fieldset>
+                        <label class="block clearfix">
+                          <span class="block input-icon input-icon-right">
+                            <input id="username" type="text" name="username" class="form-control" placeholder="用户名" />
+                            <i class="icon-user"></i>
+                          </span>
+                        </label>
+
+                        <label class="block clearfix">
+                          <span class="block input-icon input-icon-right">
+                            <input id="password" type="password" name="password" class="form-control" placeholder="密码" />
+                            <i class="icon-lock"></i>
+                          </span>
+                        </label>
+
+                        <label class="block clearfix">
+                          <span class="block input-icon input-icon-right">
+                            <input type="text" name="code"  class=" code form-control" placeholder="验证码" style="width:200px;float:left;" />
+                            <img id="code" style="float:right;" src="{{__HOST__}}/admin/login/code" alt="">
+                          </span>
+                        </label>
+
+                        <div class="space"></div>
+
+                        <div class="clearfix">
+                          <label class="inline">
+                            <input type="checkbox" class="ace" />
+                            <span class="lbl"> Remember Me</span>
+                          </label>
+
+                          <button type="submit" class="width-35 pull-right btn btn-sm btn-primary">
+                            <i class="icon-key"></i>
+                            登录
+                          </button>
+                        </div>
+
+                        <div class="space-4"></div>
+                      </fieldset>
+                    </form>
+
+
+
+                  </div><!-- /widget-main -->
+
+
+                </div><!-- /widget-body -->
+              </div><!-- /login-box -->
+
+            </div><!-- /position-relative -->
+          </div>
+        </div><!-- /.col -->
+      </div><!-- /.row -->
+    </div>
+  </div><!-- /.main-container -->
+
+  <!-- basic scripts -->
+
+
+</body>
+
+</html>

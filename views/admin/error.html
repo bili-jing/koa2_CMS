@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>错误提示页面</title>
+
+    <meta http-equiv="refresh" content="3; url={{redirect}}" />
+    <link href="{{__ROOT__}}/admin/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="{{__ROOT__}}/admin/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="{{__ROOT__}}/admin/css/ace.min.css" />
+    <link rel="stylesheet" href="{{__ROOT__}}/admin/css/ace-rtl.min.css" />
+    <link rel="stylesheet" href="{{__ROOT__}}/admin/css/ace-skins.min.css" />
+    <link rel="stylesheet" href="{{__ROOT__}}/admin/css/basic.css" />
+    <script src="{{__ROOT__}}/admin/js/ace-extra.min.js"></script>
+</head>
+<body>
+
+<div class="navbar navbar-default" id="navbar">
+
+    <div class="navbar-container" id="navbar-container">
+        <div class="navbar-header pull-left">
+            <a href="#" class="navbar-brand">
+                <small>
+                    <i class="icon-leaf"></i>
+                    CMS后台管理系统
+                </small>
+            </a><!-- /.brand -->
+        </div><!-- /.navbar-header -->
+    </div><!-- /.container -->
+</div>
+
+        <div class="error-container">
+            <div class="well">
+                <h1 class="grey lighter smaller">
+                    <i class="icon-wrench icon-animated-wrench bigger-125"></i>          {{message}}
+                </h1>
+
+                <hr>
+                <h3 class="lighter smaller">
+                   网页三秒后将自动跳转...
+                </h3>
+                <div class="space"></div>
+                <div class="center">
+                    <a href="{{redirect}}" class="btn btn-grey">
+                        <i class="icon-arrow-left"></i>
+                        立即返回
+                    </a>
+                </div>
+            </div>
+        </div>
+</body>
+</html>

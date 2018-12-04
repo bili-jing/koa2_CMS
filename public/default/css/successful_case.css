@@ -26,3 +26,16 @@
 }
 
 .main li img{ display:block; width:360px; height:256px;}
+
+
+.concent{
+	padding: 10px;
+	width: 1140px;
+	line-height: 2;
+	margin: 0 auto;
+}
+
+.concent .title{
+	text-align: center;
+}
+

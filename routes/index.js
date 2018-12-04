@@ -49,8 +49,34 @@ router.get('/news', async (ctx) => {
 
 router.get('/service', async (ctx) => {
 
-    ctx.render('default/service');
+    //查询
 
+    var serviceList=await DB.find('article',{'pid':'5ab34b61c1348e1148e9b8c2'});
+
+
+    // console.log(serviceList);
+
+    ctx.render('default/service',{
+
+        serviceList:serviceList
+    });
+
+})
+
+router.get('/content/:id',async (ctx)=>{
+
+    // console.log(ctx.params);
+
+    var id=ctx.params.id;
+
+    var content=await  DB.find('article',{'_id':DB.getObjectId(id)});
+
+    // console.log(content);
+
+    ctx.render('default/content',{
+        list:content[0]
+
+    });
 })
 
 router.get('/about', async (ctx) => {

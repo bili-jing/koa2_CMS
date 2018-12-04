@@ -21,13 +21,13 @@
         	        	
   <div class="swiper-container">
     <div class="swiper-wrapper">
-      <div class="swiper-slide">
-      	
-      	<img src="default/images/banner5.jpg" alt="" />
-      </div>
-      <div class="swiper-slide">
-      	<img src="default/images/banner2.jpg" alt="" />
-      </div>
+
+        {{each focus value index}}
+          <div class="swiper-slide">
+
+            <img src="{{value.pic}}" alt="{{value.title}}" />
+          </div>
+        {{/each}}
      
     </div>
      <div class="swiper-pagination"></div>

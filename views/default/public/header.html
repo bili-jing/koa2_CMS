@@ -7,27 +7,12 @@
         </div>
         <div class="nav">
             <ul class="clear">
+                {{each nav value index}}
                 <li>
-                    <a href="/" class="active">网站首页</a>
+                    <a href="{{value.url}}" {{if pathname==value.url}} class="active" {{/if}}>{{value.title}}</a>
                 </li>
 
-                <li>
-                    <a href="/service">开发服务</a>
-                </li>
-
-
-                <li>
-                    <a href="/case">成功案例</a>
-                </li>
-                <li>
-                    <a href="/news">新闻资讯</a>
-                </li>
-                <li>
-                    <a href="/about">关于我们</a>
-                </li>
-                <li>
-                    <a href="/connect">联系我们</a>
-                </li>
+                {{/each}}
             </ul>
         </div>
     </div>

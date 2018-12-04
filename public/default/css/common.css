@@ -1,0 +1,27 @@
+@charset "utf-8";
+/* CSS Document */
+#header-wrapper{height:103px; background:#fff;}
+#header-wrapper .header-inner{width:1140px; height:103px; margin:0 auto; background:#fff; overflow:hidden;}
+.header-inner .logo{width:398px;height:56px;background:url(../images/logo.jpg) no-repeat; float:left;
+margin-top:24px;}
+.header-inner .logo a{display:block;width:398px;height:56px;text-indent:-9999px;}
+.header-inner .nav{float:right; margin-top:31px;}
+.header-inner .nav ul li{float:left;}
+.header-inner .nav ul li a{display:block;padding:0 16px;height:72px;line-height:72px;font-size:14px; color:#333;}
+.header-inner .nav ul li a:hover{background:#f75a53; border-radius:5px 5px 0 0; text-decoration:none;color:#fff; }
+
+
+.header-inner .nav ul li a.active{
+	
+	background:#f75a53; border-radius:5px 5px 0 0; text-decoration:none;color:#fff;
+}
+
+/* 网页底部 */
+#footer-wrapper{height:138px;background:#363636;}
+#footer-wrapper .footer-inner{width:1140px;height:118px;background:#363636; margin:0 auto; padding-top:20px;}
+.footer-inner p{color:#727272; text-align:center;line-height:30px;}
+.footer-inner p a{color:#727272;}
+
+
+
+

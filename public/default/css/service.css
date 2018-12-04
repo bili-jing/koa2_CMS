@@ -1,0 +1,29 @@
+@charset "utf-8";
+/* CSS Document */
+
+#main-wrapper{  background:#FFF; }
+.main{ width:1140px;  background:#FFF; margin:0 auto; padding:30px 0 54px 0;}
+
+
+.service{
+	
+	 float: left;
+    width: 360px;
+    height: 185px;
+    margin: 8px 4px 0;
+    text-align: center;
+    background: #f5f5f5;
+}
+
+.service img{
+	margin-top: 30px;
+}
+
+.service h3{
+	
+	
+    height: 30px;   
+    line-height: 30px;
+    text-align: center;
+    color: #666666;
+}

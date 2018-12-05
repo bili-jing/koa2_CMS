@@ -81,13 +81,34 @@ router.get('/content/:id',async (ctx)=>{
 
 router.get('/about', async (ctx) => {
 
+    //获取成功案列的
+
     ctx.render('default/about');
 
 })
 
-router.get('/case', async (ctx) => {
+router.get('/case',async (ctx)=>{
 
-    ctx.render('default/case');
+    //获取成功案例下面的分类
+    var cateResult=await  DB.find('articlecate',{'pid':'5ab3209bdf373acae5da097e'});
+    //循环子分类获取子分类下面的所有的内容
+    var subCateArr=[];
+    for(var i=0;i<cateResult.length;i++){
+
+        subCateArr.push(cateResult[i]._id.toString());
+    }
+    
+
+
+    var  articleResult=await DB.find('article',{"pid":{$in:subCateArr}});
+
+    // console.log(cateResult);
+    // console.log(articleResult);
+    ctx.render('default/case',{
+
+        catelist:cateResult,
+        articlelist:articleResult
+    });
 
 })
 

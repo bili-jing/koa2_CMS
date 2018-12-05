@@ -2,8 +2,7 @@
 /* CSS Document */
 #header-wrapper{height:103px; background:#fff;}
 #header-wrapper .header-inner{width:1140px; height:103px; margin:0 auto; background:#fff; overflow:hidden;}
-.header-inner .logo{width:398px;height:56px;background:url(../images/logo.jpg) no-repeat; float:left;
-margin-top:24px;}
+.header-inner .logo{width:398px;height:56px;float:left;margin-top:24px;}
 .header-inner .logo a{display:block;width:398px;height:56px;text-indent:-9999px;}
 .header-inner .nav{float:right; margin-top:31px;}
 .header-inner .nav ul li{float:left;}

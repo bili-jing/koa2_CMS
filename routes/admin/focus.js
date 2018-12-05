@@ -74,7 +74,7 @@ router.get('/edit',async (ctx)=>{
     let result = await DB.find('focus',{
         "_id":DB.getObjectId(id)
     })
-    console.log(result);
+    // console.log(result);
     await ctx.render('admin/focus/edit',{
         list:result[0],
         prevPage:ctx.state.G.prevPage

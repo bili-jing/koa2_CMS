@@ -15,9 +15,14 @@ router.use(async (ctx,next)=>{
 
         sortJson:{'sort':1}
     })
+    //获取系统信息
+
+    var setting=await DB.find('setting',{});
+
     //模板引擎配置全局的变量
     ctx.state.nav=navResult;
     ctx.state.pathname=pathname;
+    ctx.state.setting=setting[0];
 
     await  next()
 })
@@ -35,9 +40,16 @@ router.get('/', async (ctx) => {
         sortJson:{'sort':1}
     })
 
+    //导航条的数据
+    var links=await DB.find('link',{$or:[{'status':1},{'status':'1'}]},{},{
+
+        sortJson:{'sort':1}
+    })
+
     ctx.render('default/index',{
         focus:focusResult,
-        nav:navResult
+        nav:navResult,
+        links
     });
 })
 
@@ -48,6 +60,10 @@ router.get('/news',async (ctx)=>{
     var pid=ctx.query.pid;
 
     var pageSize=3;
+
+    ctx.state.setting.site_title='xxx新闻页面';
+    ctx.state.setting.site_keywords='xxx新闻页面';
+    ctx.state.setting.site_description='xxx新闻页面';
 
     //获取分类
     var cateResult=await  DB.find('articlecate',{'pid':'5afa56bb416f21368039b05d'});

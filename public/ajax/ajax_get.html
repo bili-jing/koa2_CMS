@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="js/jquery-1.12.3.js" ></script>
+		
+		<script type="text/javascript">
+			
+/*浏览器的同源策略导致跨域问题
+
+什么情况存在跨域
+
+域名  端口 协议 任意一个不一样就存在跨域
+
+
+
+ */
+			$(function(){
+				
+				
+				$('#button').click(function(){
+
+					
+					$.getJSON('http://localhost:8000/api/catelist', function(data){
+						
+						console.log(data);
+					})
+					
+					
+				})
+			})
+			
+		</script>
+	</head>
+	<body>
+		
+		<button id="button">请求数据</button>
+	</body>
+</html>

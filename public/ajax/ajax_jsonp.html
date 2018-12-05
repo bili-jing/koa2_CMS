@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/jquery-1.12.3.js"></script>
+
+		<script>
+
+
+			function xxxx(data){
+				console.log(data);
+			}
+			/*
+
+		jsonp的原理 ：利用script src可以跨域的特性
+
+				1.本地写一个回调函数
+
+				2、在远程执行这个回调函数，把远程的数据传到本地
+
+		服务器必须支持jsonp
+
+			* */
+//			$(function(){
+//
+//				var url='http://localhost:3000/api/newscate';
+//
+//				$.ajax({
+//				    url:url,
+//				    dataType:'jsonp',    /*定义jsonp请求*/
+//				    data:'',      /*get传值*/
+//				    jsonp:'callback',      /*回调函数的参数*/
+//				    success:function(data) {
+//						  console.log(data);
+//				    },
+//				    timeout:3000     /*超时时间*/
+//				});
+//
+//			})
+		</script>
+
+
+		<script src="http://localhost:8000/api/catelist?callback=xxxx"></script>
+	</head>
+	<body>
+		<p></p>
+	</body>
+</html>

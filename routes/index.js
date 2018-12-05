@@ -41,9 +41,50 @@ router.get('/', async (ctx) => {
     });
 })
 
-router.get('/news', async (ctx) => {
+router.get('/news',async (ctx)=>{
 
-    ctx.render('default/news');
+
+    var page=ctx.query.page ||1;
+    var pid=ctx.query.pid;
+
+    var pageSize=3;
+
+    //获取分类
+    var cateResult=await  DB.find('articlecate',{'pid':'5afa56bb416f21368039b05d'});
+
+    if(pid){
+        var  articleResult=await DB.find('article',{"pid":pid},{},{
+
+            pageSize,
+            page
+        });
+        var  articleNum=await DB.count('article',{"pid":pid});
+
+
+    }else{
+
+        //获取所有子分类的id
+        var subCateArr=[];
+        for(var i=0;i<cateResult.length;i++){
+            subCateArr.push(cateResult[i]._id.toString());
+        }
+        var  articleResult=await DB.find('article',{"pid":{$in:subCateArr}},{},{
+            pageSize,
+            page
+        });
+
+        var  articleNum=await DB.count('article',{"pid":{$in:subCateArr}});
+    }
+
+    ctx.render('default/news',{
+
+        catelist:cateResult,
+        newslist:articleResult,
+        pid:pid,
+        page:page,
+        totalPages:Math.ceil(articleNum/pageSize)
+
+    });
 
 })
 

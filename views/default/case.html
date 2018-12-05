@@ -9,6 +9,7 @@
 	<link rel="stylesheet" type="text/css" href="default/css/common.css" />
 	<link rel="stylesheet" type="text/css" href="default/css/heder_nav-menu.css" />
 	<link rel="stylesheet" type="text/css" href="default/css/successful_case.css" />
+	<link rel="stylesheet" type="text/css" href="default/css/bootstrap.min.css"/>
 </head>
 
 <body>
@@ -30,10 +31,10 @@
 
 	<div id="header_title-wrapper">
 
-		<div class="header_title clear">
+		<div class="header_cate">
 			<p>
 				{{each catelist value index}}
-				<a href="#">{{value.title}}</a>
+				<a {{if pid==value._id}}class="active"{{/if}} href="/case?pid={{@value._id}}">{{value.title}}</a>
 				{{/each}}
 				<!-- <a href="#">教育行业</a>
         <a href="#">房地产业</a>
@@ -68,6 +69,7 @@
 
 			</ul>
 
+			<div id="page" class="pagination"></div>
 
 		</div>
 
@@ -96,7 +98,28 @@
 	</div>
 
 
-
+	<script src="/default/js/jquery-1.10.2.min.js"></script>
+	<script src="/default/js/jqPaginator.js"></script>
+	
+	<script>
+	
+		$('#page').jqPaginator({
+			totalPages: {{totalPages}},
+			visiblePages: 6,
+			currentPage: {{page}},
+			onPageChange: function (num, type) {
+	
+				if(type=='change'){
+					 {{if pid}}
+						 location.href="/case?pid={{pid}}&page="+num;
+	
+					 {{else}}
+						  location.href="/case?page="+num;
+					 {{/if}}
+				}
+			}
+		});
+	</script>
 
 
 </body>

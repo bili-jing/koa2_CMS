@@ -13,3 +13,25 @@
 .header_title p{ float:right;}
 .header_title p a{ text-align:center; color:#666865; font-size:12px; line-height:60px;  margin-right:34px; }
 .header_title p a:hover{ color:#F00;}
+
+
+.header_cate{
+    width:1140px;
+    margin: 0 auto;
+}
+.header_cate a{
+    float: left;
+    width: 105px;
+    height: 33px;
+    line-height: 33px;
+    text-align: center;
+    margin-right: 9px;
+    margin-bottom: 10px;
+    border: 1px solid #e4e4e4;
+    color: #666;
+}
+
+.header_cate a.active{
+
+    border: 1px solid red;
+}

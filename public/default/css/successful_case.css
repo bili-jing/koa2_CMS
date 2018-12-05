@@ -3,7 +3,7 @@
 
 #main_wrapper{ background:#fff;}
 .main{ width:1140px; margin:0 auto; padding:60px 0 102px 0; }
-.main li { 
+.main .clear li { 
 	
 	float:left;	
    
@@ -38,4 +38,5 @@
 .concent .title{
 	text-align: center;
 }
+
 
